@@ -1,0 +1,10 @@
+project: savantenvs/esp32-camera
+target: fuzz_jpg2bmp
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_jpg2bmp/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_jpg2bmp
+    libfuzzer: true
+    timeout: 30
+    dictionary: /mayhem/mayhem/fuzz_jpg2bmp/fuzz_jpg2bmp.dict

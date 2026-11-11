@@ -1,0 +1,9 @@
+project: savantenvs/esp32-camera
+target: fuzz_fmt2rgb888
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_fmt2rgb888/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_fmt2rgb888
+    libfuzzer: true
+    timeout: 30
